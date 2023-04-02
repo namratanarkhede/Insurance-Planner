@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+           <meta name="veiwport" content='with=device-width', initial-scale=1.0">
+        <title>Insurance Planner</title>
+        <link rel="stylesheet" href="./Policy1.css">
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+                <a href="./Insurance Planner.html">
+                    <h1>"BIKE INSURANCE"</h1></a><br>
+               
+            </nav>
+        </section>
+        <div class="G">
+            <ul>
+                    <li class="list" data-filter="All">All&emsp;</li>
+                    <li class="list" data-filter="MOST">MOST PURCHASED&emsp;</li>
+                    <li class="list" data-filter="RECENTLY">RECENTLY ADDED&emsp;</li>
+                    <li class="list" data-filter="BUDGET">BUDGET FRIENDLY</li>
+
+            </ul>
+        </div><br>
+        
+        <section class="plans" id="plans">
+            <div class="heading">Best Plans for you</div>
+            <div class="mainbox">
+            <div class="container BUDGET">
+                <div class="image">
+                    <img src="Oriental.jfif" height="140px"> 
+                    </div>
+                <div class="title">
+                    <h4>ORIENTAL INSURANCE
+                    </h4>
+                </div>
+                <div class="desc">
+                    <p>IDV - Rs.73,558<br>
+                        Rs. 1,451</p>
+                    <button><a href="templates/Admin%20Page.html"> Read More</a></button>
+                </div>
+            
+                </div>
+
+                <div class="container MOST">
+                    <div class="tag">
+                        <p>Most Purchased</p>
+                    </div>
+                    <div class="image">
+                        <img src="static/Bajaj.jfif" height="140px">
+                        </div>
+                    <div class="title">
+                        <h4>BAJAJ ALLIANZ
+                        </h4>
+                    </div>
+                    <div class="desc">
+                        <p>limited third party only<br>
+                            Rs. 2,273</p>
+                        <button><a href="templates/Admin%20Page.html"> Read More</a></button>
+                    </div>
+                
+                    </div>
+
+                    <div class="container MOST">
+                        <div class="tag">
+                            <p>Most Purchased</p>
+                        </div>
+                        <div class="image">
+                            <img src="Digit.jfif" height="140px"> 
+                            </div>
+                        <div class="title">
+                            <h4>DIGIT
+                            </h4>
+                        </div>
+                        <div class="desc">
+                            <p>regular third party only <br>
+                                Rs. 752<br>
+
+                            </p>
+                            <button><a href="templates/Admin%20Page.html"> Read More</a></button>
+                        </div>
+                    
+                        </div>
+        
+                        <div class="container RECENTLY">
+                            <div class="image">
+                                <img src="United.jfif" height="120px"> 
+                                </div>
+                            <div class="title">
+                                <h4>UNITED INDIA INSURANCE
+                                </h4>
+                            </div>
+                            <div class="desc">
+                                <p>IDV- Rs. 8,32,000<br>
+                                    Rs. 3,682</p>
+                                <button><a href="templates/Admin%20Page.html">Read More</a></button>
+                            </div>
+                        
+                            </div>
+
+                            <div class="container BUDGET">
+                                <div class="image">
+                                    <img src="Edelweiss.jfif" height="140px"> 
+                                    </div>
+                                <div class="title">
+                                    <h4>EDELWEISS
+                                    </h4>
+                                </div>
+                                <div class="desc">
+                                    <p>regular third party only<br>
+                                        Rs. 752</p>
+                                    <button><a href="templates/Admin%20Page.html">Read More</a></button>
+                                </div>
+                            
+                                </div>
+
+                                
+                                <div class="container RECENTLY">
+                                    <div class="image">
+                                        <img src="NEW INDIA.jfif" height="140px"> 
+                                        </div>
+                                    <div class="title">
+                                        <h4>NEW INDIA INSURANCE
+                                        </h4>
+                                    </div>
+                                    <div class="desc">
+                                        <p>IDV- 32,008<br>
+                                            Rs.841</p>
+                                        <button><a href="templates/Admin%20Page.html">Read More</a></button>
+                                    </div>
+                                
+                                    </div>
+        
+
+                           
+                                             
+            </div> 
+                
+
+            
+
+        </section>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+               $('.list').click(function(){
+                   const value = $(this).attr('data-filter');
+                   if (value=='All'){
+                       $('.container').show('1000');
+                   }
+                   else{
+                       $('.container').not('.'+value).hide('1000');
+                       $('.container').filter('.'+value).show('1000');
+
+                   }
+               })
+            })
+            
+        </script>
+    
+</html>

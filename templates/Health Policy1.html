@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+           <meta name="veiwport" content='with=device-width', initial-scale=1.0">
+        <title>Insurance Planner</title>
+        <link rel="stylesheet" href="../static/Policy1.css">
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+                    <h1>{{ type }} Insurance</h1><br>
+
+                
+            </nav>
+        </section>
+
+        <div class="G">
+            <ul>
+                    <li class="list" data-filter="All">All&emsp;</li>
+                    <li class="list" data-filter="MOST">MOST PURCHASED&emsp;</li>
+                    <li class="list" data-filter="RECENTLY">RECENTLY ADDED&emsp;</li>
+                    <li class="list" data-filter="BUDGET">BUDGET FRIENDLY</li>
+
+            </ul>
+        </div><br>
+        
+        <section class="plans" id="plans">
+            <div class="heading">Best Plans for you</div>
+            <div class="mainbox">
+                {% for policy in policies if income/10 >= "".join(policy.yearly[3:].split(','))|int %}
+                {% set new_amt = "".join(policy.yearly[3:].split(','))|int %}
+                {% set newmonthly = "".join(policy.monthly[3:].split(','))|int %}
+            <div class="container MOST">
+                <div class="tag">
+                    <p>Most Purchased</p>
+                </div>
+                <div class="image">
+                    <img src='../static/{{ policy.image }}'>
+                    </div>
+                <div class="title">
+                    <h4>{{policy.name}}</h4>
+                        <p>{{policy.cover}}<br>
+            {% if choices == "Me & My Partner" %}
+                  {% set newmonthly = newmonthly + 333.34 %}{{ newmonthly }}/mon <br>
+                            {% set new_amt = new_amt + 4000 %} {{ new_amt }}annual
+            {% elif choices == "Me, My Partner and Child" %}
+                  {% set newmonthly = newmonthly + 666.67 %}{{ newmonthly }}/mon <br>
+                            {% set new_amt = new_amt + 8000 %} {{ new_amt }}annual
+            {% elif choices == "My Parents" %}
+                  {% set newmonthly = newmonthly * 3 %}{{ newmonthly }}/mon <br>
+                            {% set new_amt = new_amt * 3 %} {{ new_amt }}annual
+            {% else %}
+                  {{newmonthly}}/mon <br>
+                            {{new_amt}} annual
+            {% endif %}
+
+                    </p>
+                </div>
+                <div class="desc">
+                    <button><a href="{{url_for( 'read_more', id=policy.id, newmonthly=newmonthly, new_amt=new_amt )}}"> Read More</a></button>
+                </div>
+
+                </div>
+                {% endfor %}
+
+            </div>
+</section>
+<!--        <script src="https://code.jquery.com/jquery-3.5.1.js"-->
+<!--        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="-->
+<!--        crossorigin="anonymous"></script>-->
+
+<!--        <script type="text/javascript">-->
+<!--            $(document).ready(function(){-->
+<!--               $('.list').click(function(){-->
+<!--                   const value = $(this).attr('data-filter');-->
+<!--                   if (value=='All'){-->
+<!--                       $('.container').show('1000');-->
+<!--                   }-->
+<!--                   else{-->
+<!--                       $('.container').not('.'+value).hide('1000');-->
+<!--                       $('.container').filter('.'+value).show('1000');-->
+
+<!--                   }-->
+<!--               })-->
+<!--            })-->
+<!--            -->
+<!--        </script>-->
+        </body>
+    
+</html>

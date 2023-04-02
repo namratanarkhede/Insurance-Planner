@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+   <title>{{ policy.name }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/splits.css">
+</head>
+<body>
+    <div class="split left">
+        <div class="centered">
+          <img src="/static/{{ policy.image }}" height="90vh" width="200vh">
+          <font color="white"><p><font size="5"><b>{{ policy.cover }} Sum Insured</b></font></p>
+          <h2>Cover&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPremium</h2>
+          <p><font size="5"><b>{{ policy.cover }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ newmonthly }}</b></font></p>
+          <h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ new_amt }}</h3></font>
+        </div>
+      <header>
+        <nav class="navbar">
+          <ul>
+            <li class="features" onclick="show_hide()" id="1">Features</li>
+            <li class="claims" onclick="show_hide1()" id="2">Claims</li>
+          
+            <li class="moreinfo">More Info</li>
+              <button class="w-100 btn btn-primary" onclick="window.location.href='{{ url_for( 'checkout', id=policy.id, newmonthly=newmonthly, new_amt=new_amt ) }}'" type="submit">Purchase Policy</button>
+
+          </ul>
+
+        </nav>
+      </header>
+
+        <div class="content">
+          <p id="f">{{ policy.features }}
+            </p>
+        
+          <p id="c">{{ policy.claim }}</p>
+
+
+
+        </div>
+    </div>
+      <script src="/static/readmore.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

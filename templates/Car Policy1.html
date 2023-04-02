@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+           <meta name="veiwport" content='with=device-width', initial-scale=1.0">
+        <title>Insurance Planner</title>
+        <link rel="stylesheet" href="./Policy1.css">
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+                <a href="./Insurance Planner.html">
+                    <h1>"CAR INSURANCE"</h1></a><br>
+                
+            </nav>
+        </section>
+
+        <div class="G">
+            <ul>
+                    <li class="list" data-filter="All">All&emsp;</li>
+                    <li class="list" data-filter="MOST">MOST PURCHASED&emsp;</li>
+                    <li class="list" data-filter="RECENTLY">RECENTLY ADDED&emsp;</li>
+                    <li class="list" data-filter="BUDGET">BUDGET FRIENDLY</li>
+
+            </ul>
+        </div><br>
+        
+        <section class="plans" id="plans">
+            <div class="heading">Best Plans for you</div>
+            <div class="mainbox">
+            <div class="container MOST">
+                <div class="tag">
+                    <p>Most Purchased</p>
+                </div>
+                <div class="image">
+                    <img src="NEW INDIA.jfif"> 
+                    </div>
+                <div class="title">
+                    <h4>NEW INDIA INSURANCE</h4>
+                        <p>11 cashless garages<br>
+                        IDV- Rs.2,23,650<br>
+                        RS. - 3,684<br>
+                    </p>
+                </div>
+                <div class="desc">
+                    <button><a href="templates/Admin%20Page.html"> Read More</a></button>
+                </div>
+            
+                </div>
+
+                <div class="container BUDGET">
+                    <div class="image">
+                        <img src="NAVI.jfif" height="115px"> 
+                        </div>
+                    <div class="title">
+                        <h4>NAVI INSURANCE</h4>
+                           <p>24 cashless garages<br>
+                           IDV- Rs.90,978<br>
+                           RS. - 3,594<br>
+                        </p>
+                    </div>
+                    <div class="desc">
+                        <button><a href="templates/Admin%20Page.html"> Read More</a></button>
+                    </div>
+                
+                    </div>
+
+                    <div class="container RECENTLY">
+                        <div class="image">
+                            <img src="National.jfif"> 
+                            </div>
+                        <div class="title">
+                            <h4>NATIONAL INSURANCE</h4>
+                                <p>8 cashless garages<br>
+                                IDV- Rs.12,24,000<br>
+                                RS. - 5,053<br>
+                            </p>
+                        </div>
+                        <div class="desc">
+                            <button><a href="templates/Admin%20Page.html"> Read More</a></button>
+                        </div>
+                    
+                        </div>
+        
+                        <div class="container RECENTLY">
+                            <div class="image">
+                                <img src="Raheja.jfif" height="115px"> 
+                                </div>
+                            <div class="title">
+                                <h4>RAHEJA QBE</h4>
+                                   <p>48 cashless garages<br>
+                                   IDV- Rs.5,43,150<br>
+                                   RS. - 9,712<br>
+                                </p>
+                            </div>
+                            <div class="desc">
+                                <button><a href="templates/Admin%20Page.html">Read More</a></button>
+                            </div>
+                        
+                            </div>
+
+                        <div class="container BUDGET">
+                                <div class="image">
+                                    <img src="United.jfif" height="100px"> 
+                                    </div>
+                                <div class="title">
+                                    <h4>UNITED INDIA INSURANCE</h4>
+                                    <p>14 Cashless garages<br>
+                                        IDV- Rs.2,14,48<br>
+                                        RS. - 4,605<br>
+                                    </p>
+                                </div>
+                                <div class="desc">
+                                    <button><a href="templates/Admin%20Page.html">Read More</a></button>
+                                </div>
+                            
+                                </div>
+
+                        <div class="container MOST">
+                            <div class="tag">
+                                <p>Most Purchased</p>
+                            </div>
+                                    <div class="image">
+                                        <img src="Digit.jfif" height="115px"> 
+                                        </div>
+                                    <div class="title">
+                                        <h4>DIGIT</h4>
+                                           <p>Repair anywhere<br>
+                                           IDV- Rs.5,72,069<br>
+                                           RS. -8,480<br>
+                                        </p>
+                                    </div>
+                                    <div class="desc">
+                                        <button><a href="templates/Admin%20Page.html">Read More</a></button>
+                                    </div>
+                                
+                            </div>
+
+                           
+                                             
+            </div> 
+                
+
+            
+
+        </section>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+               $('.list').click(function(){
+                   const value = $(this).attr('data-filter');
+                   if (value=='All'){
+                       $('.container').show('1000');
+                   }
+                   else{
+                       $('.container').not('.'+value).hide('1000');
+                       $('.container').filter('.'+value).show('1000');
+
+                   }
+               })
+            })
+            
+        </script>
+        </body>
+    
+</html>

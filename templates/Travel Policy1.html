@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+           <meta name="veiwport" content='with=device-width', initial-scale=1.0">
+        <title>Insurance Planner</title>
+        <link rel="stylesheet" href="./Policy1.css">
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+                <a href="./Insurance Planner.html">
+                    <h1>"TRAVEL INSURANCE"</h1></a>
+                
+            </nav>
+        </section>
+        
+        <div class="G">
+            <ul>
+                    <li class="list" data-filter="All">All&emsp;</li>
+                    <li class="list" data-filter="MOST">MOST PURCHASED&emsp;</li>
+                    <li class="list" data-filter="RECENTLY">RECENTLY ADDED&emsp;</li>
+                    <li class="list" data-filter="BUDGET">BUDGET FRIENDLY</li>
+
+            </ul>
+        </div><br>
+        
+        <section class="plans" id="plans">
+            <div class="heading">Best Plans for you</div>
+            <div class="mainbox">
+            <div class="container MOST">
+                <div class="tag">
+                    <p>Most Purchased</p>
+                </div>
+                <div class="image">
+                    <img src="static/Bajaj.jfif">
+                    </div>
+                <div class="title">
+                    <h4>BAJAJ ALLIANZ</h4>
+                        <p>GERMANY<br>
+                        3PEOPLE-19 YO,34 YO,40 YO<br>
+                        PREMIUM<br>
+                        RS3057
+                    </p>
+                </div>
+                <div class="desc">
+                    <button><a href="templates/Admin%20Page.html"> Read More</a></button>
+                </div>
+            
+                </div>
+
+                <div class="container BUDGET">
+                    <div class="image">
+                        <img src="./reliance.jfif" height="130px"> 
+                        </div>
+                    <div class="title">
+                        <h4>RELIANCE INSURANCE</h4>
+                           <p>USA<br>
+                            1PERSON-19 YO<br>
+                            PREMIUM<br>
+                            RS1031
+
+                        </p>
+                    </div>
+                    <div class="desc">
+                        <button><a href="templates/Admin%20Page.html"> Read More</a></button>
+                    </div>
+                
+                    </div>
+
+                    <div class="container RECENTLY">
+                        <div class="image">
+                            <img src="./tata aig.jfif" height="115px"> 
+                            </div>
+                        <div class="title">
+                            <h4>TATA AIG </h4>
+                                <p>CANADA<br>
+                                   1 PERSON-25 YO (PRE-EXISTING ILLNESSS)<br>
+                                   PREMIUM<br>
+                                   RS1098
+                                    
+                            </p>
+                        </div>
+                        <div class="desc">
+                            <button><a href="templates/Admin%20Page.html"> Read More</a></button>
+                        </div>
+                    
+                        </div>
+        
+                        <div class="container RECENTLY">
+                            <div class="image">
+                                <img src="./care health.jfif" height="115px"> 
+                                </div>
+                            <div class="title">
+                                <h4>CARE HEALTH</h4>
+                                   <p>OMAN<br>
+                                    1 PERSON-60 YO (PRE-EXISTING ILLNESS)<br>
+                                    PREMIUM<br>
+                                    RS474
+                                    
+                                </p>
+                            </div>
+                            <div class="desc">
+                                <button><a href="templates/Admin%20Page.html">Read More</a></button>
+                            </div>
+                        
+                            </div>
+
+                        <div class="container BUDGET">
+                                <div class="image">
+                                    <img src="./tata aig.jfif" height="120px"> 
+                                    </div>
+                                <div class="title">
+                                    <h4>TATA AIG</h4>
+                                    <p>UAE<br>
+                                        1 PERSON-99 YO (PRE-EXISTING ILLNESS)<br>
+                                        PREMIUM<br>
+                                        RS8866
+                                        
+                                    </p>
+                                </div>
+                                <div class="desc">
+                                    <button><a href="templates/Admin%20Page.html">Read More</a></button>
+                                </div>
+                            
+                                </div>
+
+                        <div class="container MOST">
+                            <div class="tag">
+                                <p>Most Purchased</p>
+                            </div>
+                                    <div class="image">
+                                        <img src="Digit.jfif" height="115px"> 
+                                        </div>
+                                    <div class="title">
+                                        <h4>DIGIT INSURANCE</h4>
+                                           <p>SINGAPORE<br>
+                                            2PEOPLE-19 YO,40 YO<br>
+                                            PREMIUM<br>
+                                            RS940
+                                            
+                                        </p>
+                                    </div>
+                                    <div class="desc">
+                                        <button><a href="templates/Admin%20Page.html">Read More</a></button>
+                                    </div>
+                                
+                            </div>
+
+                           
+                                             
+            </div> 
+                
+
+            
+
+        </section>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+               $('.list').click(function(){
+                   const value = $(this).attr('data-filter');
+                   if (value=='All'){
+                       $('.container').show('1000');
+                   }
+                   else{
+                       $('.container').not('.'+value).hide('1000');
+                       $('.container').filter('.'+value).show('1000');
+
+                   }
+               })
+            })
+            
+        </script>
+        </body>
+    
+</html>

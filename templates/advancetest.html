@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+{% import "bootstrap/wtf.html" as wtf %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/Insurance.css" />
+    <title>Title</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<style>
+    [id^='id'] {
+  display: none;
+}
+#idproof {
+  display: inherit;
+}
+</style>
+    </head>
+<body>
+<form method="POST" action="/test/{{ type }}">
+    <div class="container">
+        <div class="box">
+<div class="col-md-6 col-12">
+{{ form.csrf_token }}
+    <div class="form-group">
+        <label>Identity Proofs</label>
+        <select name="user_choice" class="form-control select2" multiple="multiple" data-placeholder="Select at least one"
+                            style="width: 100%;" id="idproof">
+            <option value="Me">Me</option>
+            <option value="Me & My Partner">Me & My Partner</option>
+            <option value="Me, My Partner & Child">Me, My Partner & Child</option>
+            <option value="My Parents">My Parents</option>
+        </select>
+    </div>
+</div>
+{% if type == "Health" %}
+        <div class="form-group">
+            {{ form.radio.label }}
+        </div>
+        {{ form.radio }}
+        <div class="form-group">
+            {{ form.desc.label }}
+            {{ form.desc() }}
+        </div>
+
+        <div class="form-group">
+             {{ form.covid.label }}
+            {{ form.covid() }}
+        </div>
+
+        <div class="form-group">
+            {{ form.surgery.label }}
+            {{ form.surgery() }}
+        </div>
+    <div class="form-group">
+            {{ form.income.label }}
+            {{ form.income() }}
+        </div><br>
+{% else %}
+        <div class="form-group">
+            {{ form.radio.label }}
+        </div>
+        {{ form.radio }}
+        <div class="form-group">
+            {{ form.desc.label }}
+            {{ form.desc() }}
+        </div>
+
+    <div class="form-group">
+            {{ form.income.label }}
+            {{ form.income() }}
+        </div><br>
+{% endif %}
+<div id="id1">
+</div>
+<div id="id2">
+    <div class="form-group">
+            {{ form.fname_partner.label }}
+            {{ form.fname_partner }}
+        </div>
+        <div class="form-group">
+            {{ form.lname_partner.label }}
+
+        {{ form.lname_partner }}
+            </div>
+        <div class="form-group">
+            {{ form.mobile_partner.label }}
+            {{ form.mobile_partner() }}
+        </div>
+
+        <div class="form-group">
+             {{ form.aadharno_partner.label }}
+            {{ form.aadharno_partner() }}
+        </div>
+        <div class="form-group">
+             {{ form.aadarphoto_partner.label }}
+            {{ form.aadarphoto_partner() }}
+        </div>
+    </div>
+<div id="id3">
+        <div class="form-group">
+            {{ form.fname_partner.label }}
+            {{ form.fname_partner }}
+        </div>
+        <div class="form-group">
+            {{ form.lname_partner.label }}
+
+        {{ form.lname_partner }}
+            </div>
+        <div class="form-group">
+            {{ form.mobile_partner.label }}
+            {{ form.mobile_partner() }}
+        </div>
+
+        <div class="form-group">
+             {{ form.aadharno_partner.label }}
+            {{ form.aadharno_partner() }}
+        </div>
+    <div class="form-group">
+             {{ form.aadarphoto_partner.label }}
+            {{ form.aadarphoto_partner() }}
+        </div>
+        <div class="form-group">
+            {{ form.fname_child.label }}
+            {{ form.fname_child }}
+        </div>
+        <div class="form-group">
+            {{ form.lname_child.label }}
+        {{ form.lname_child }}
+            </div>
+    </div>
+</div>
+<div id="id4">
+        <div class="form-group">
+            {{ form.fname_parent1.label }}
+            {{ form.fname_parent1 }}
+        </div>
+        <div class="form-group">
+            {{ form.lname_parent1.label }}
+        {{ form.lname_parent1 }}
+            </div>
+        <div class="form-group">
+            {{ form.mobile_parent1.label }}
+            {{ form.mobile_parent1 }}
+        </div>
+
+        <div class="form-group">
+             {{ form.aadharno_parent1.label }}
+            {{ form.aadharno_parent1 }}
+        </div>
+    <div class="form-group">
+             {{ form.aadarphoto_parent1.label }}
+            {{ form.aadarphoto_parent1 }}
+        </div>
+            <div class="form-group">
+            {{ form.fname_parent2.label }}
+            {{ form.fname_parent2 }}
+        </div>
+        <div class="form-group">
+            {{ form.lname_parent2.label }}
+        {{ form.lname_parent2 }}
+            </div>
+        <div class="form-group">
+            {{ form.mobile_parent2.label }}
+            {{ form.mobile_parent2 }}
+        </div>
+
+        <div class="form-group">
+             {{ form.aadharno_parent2.label }}
+            {{ form.aadharno_parent2 }}
+        </div>
+    <div class="form-group">
+             {{ form.aadarphoto_parent2.label }}
+            {{ form.aadarphoto_parent2 }}
+        </div>
+
+</div>
+        <div class="form-group-button">
+            {{ form.submit(class="form-group-button") }}
+        </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    // Add click event to options
+$("select option").click( function() {
+
+
+  // Create index value
+  i = 1;
+
+  // Cycle through each of the options
+  $(this).closest("select").children("option").each( function() {
+
+    // Check if option is selected
+    if ( $(this).is(':selected') ) {
+
+      // If it is, show associated div
+      $("#id" + i).show();
+
+    } else {
+
+      // If it is not selected, hide associated div
+      $("#id" + i).hide();
+
+    }
+
+    // Increase index
+    i = i + 1;
+
+  });
+
+});
+</script>
+</body>
+</html>

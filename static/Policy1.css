@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    
+    text-align: center;
+    font-size: xx-large;
+    
+}
+
+
+.nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    color: rgb(247, 223, 223);
+    
+}
+
+    .nav-links{
+    flex: 1;
+    text-align: right;
+    color: black;
+    }
+    .nav-links ul li {
+    list-style: none; 
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+     
+    }
+    .nav-links ul li a{
+    color: black;
+    text-decoration: none;
+    font-size: 13px ;
+    }
+    .nav-links ul li::after{
+    content: '' ;
+    width: 0%;
+    height: 2px; 
+    background: #E8EDF2;
+    display: block;
+    margin: auto; 
+    transition: 0.5s; 
+    }
+    .heading{
+        font-size: xx-large;
+        text-align: center;
+    }
+
+    .mainbox{
+        background-color: #E8EDF2;
+
+    }
+    .container{
+        width: 15%;
+        background-color: white;
+        border-radius: 5px;
+        margin: 60px;
+        box-shadow: 2px 2px 10px black;
+        display: inline-block;
+
+
+    }
+    .image img{
+        width: 100%;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+    .title{
+        text-align: center;
+        padding: 5px;
+    }
+    .desc{
+        text-align: center;
+        padding: 4px;
+    }
+    button{
+        margin-top: 10px;
+        background-color: white;
+        border: 1px solid black;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover{
+        background-color: black;
+        color: white;
+        transition: 0.5s;
+        
+    }
+
+    .G{
+        display: left; 
+        justify-content: space-around;
+        padding-left: 50px;
+     
+    }
+    .G ul li{
+        color: black;
+        padding: left 10px; ;
+        display: inline;
+        justify-content: space-around;
+        text-decoration: none;
+        font-size: 20px ;
+        width: 25%;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 0 10px;
+   
+    }
+
+    .G ul li:hover{
+        color: lightseagreen;
+        border-bottom: .1rem solid lightseagreen;
+        padding-bottom: .5rem;
+    }
+    .tag{
+        padding-left: 40%;
+    
+    }
+    .tag p{
+        background-color: red;
+        color: #fff;
+        transform: rotate(-345deg) translateY(10px) translateX(10px);
+        text-align: right;
+        padding-right: 10%;
+        overflow: hidden;
+
+    }
+
+    

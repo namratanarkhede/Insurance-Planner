@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="static/Insurance.css" />
+    <title>Health Insurance</title>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <h1>INSURANCE PLANNER</h1>
+    </nav>
+    <div class="box">
+        <div class="close-btn">&times;</div>
+        <div class="form">
+            <h2>Welcome to Health Insurance</h2>
+            <div class="form-element">
+                Who to insure?<br><input type="radio" name="r1" required>Me<br>
+                <input type="radio" name="r1" required>Me and Wife<br>
+                <input type="radio" name="r1" required>Me, wife and 1 child/2child<br>
+                <input type="radio" name="r1" required>My parents<br><br><br></i>
+                Enter Pincode<input type="text" name="t1" required><br><br><br>
+                Does any member have an existing illness or medical history?<br>
+                <input type="radio" name="r1">yes<br>
+                <input type="radio" name="r1">no<br><br>
+                <p><b>This helps us find plans that cover your condition and avoid claim rejection.</b></p><br>
+                Existing illness<br>
+                <input type="radio" name="r1" required>Blood pressure, Diabetes, Heart conditions, Asthma, Thyroid,
+                Cancer etc.<br>
+                <input type="radio" name="r1" required>Covid 19Tested positive for Covid-19<br>
+                <input type="radio" name="r1" required>Surgical procedureAppendix, Gall bladder, C-section etc.<br>
+                <input type="radio" name="r1" required>None of these<br><br><br>
+                <button class="btn"><a href="{{ url_for('healthpol') }}">Submit</a></i></button>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+    <div class="health-image">
+    <img src="./health image.jpg" height="300" width="500">
+    </div>
+
+    <br><br><br><br><br><br><br><br>
+    <footer class="footer">
+        <section class="footer-section">
+            <div class="logo-container">
+                <h1>INSURANCE PLANNER</h1>
+                <div class="social-container">
+                    <img src="./icon-facebook.svg" alt="" />
+                    <img src="./icon-instagram.svg" alt="" />
+                    <img src="./icon-twitter.svg" alt="" />
+                    <img src="./icon-pinterest.svg" alt="" />
+                </div>
+            </div>
+            <div class="footer-menu-container">
+                <div class="menu">
+                    <h1>Our Company</h1>
+                    <div class="menu-items">
+                        <a href="#">How we work</a>
+                        <a href="#">Why Insurance Planner?</a>
+                        <a href="#">View Plans</a>
+                        <a href="#">Reviews</a>
+                    </div>
+                </div>
+                <div class="menu">
+                    <h1>Help me</h1>
+                    <div class="menu-items">
+                        <a href="#">Faq</a>
+                        <a href="#">Terms of use?</a>
+                        <a href="#">Privacy policy</a>
+                        <a href="#">cookies</a>
+                    </div>
+                </div>
+                <div class="menu">
+                    <h1>Contact</h1>
+                    <div class="menu-items">
+                        <a href="#">Sales</a>
+                        <a href="#">Support</a>
+                        <a href="#">Live Chat</a>
+                    </div>
+                </div>
+                <div class="menu">
+                    <h1>Others</h1>
+                    <div class="menu-items">
+                        <a href="#">Carriers</a>
+                        <a href="#">Press</a>
+                        <a href="#">Licences</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>

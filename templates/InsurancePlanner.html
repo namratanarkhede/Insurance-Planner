@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="static/InsurancePlanner.css"/>
+    <script type="text/javascript" src="static/InsurancePlanner.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+
+  h3 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  .jumbotron {
+    background-color: #f4511e;
+    color: #fff;
+    padding: 100px 25px;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #f4511e;
+    font-size: 50px;
+  }
+  .logo {
+    color: #f4511e;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #f4511e;
+  }
+  .carousel-indicators li {
+    border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+    background-color: #f4511e;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #f4511e;
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #f4511e;
+    background-color: #fff !important;
+    color: #f4511e;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #f4511e;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
+   <title> Insurance Planner </title>
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <h1><big>Insurance Planner</big></h1>
+
+        <div class="nav-items">
+            <a href="./About us.html">About us</a>
+            {% if not current_user.is_authenticated %}
+            <a href="{{url_for('login')}}">Sign In</a>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+            <a href="{{url_for('policies', id=current_user.id)}}">My Policies</a>
+            <a href="{{url_for('analysis')}}">Stats</a>
+            <a href="{{url_for('kyc')}}">KYC</a>
+            {% if current_user.id == 1: %}
+            <a href="{{url_for('dashboard')}}">Dashboard</a>
+            {% endif %}
+            <a href="{{url_for('logout')}}">Logout</a>
+            {% endif %}
+            <a href="{{url_for('contactus')}}">Help</a>
+        </div>
+    </nav>
+    <header class="start-section">
+
+
+        <div class="start-text">
+            {% if current_user.is_authenticated %}
+            <p>Welcome {{ current_user.name }}</p>
+            {% endif %}
+            <h1>HUMANIZING </h1>
+            <h2>Your Insurance</h2>
+            <p>A perfect insurance in your pocket in just 3 easy steps :</br><b>Compare ,Choose & Apply</b></p>
+        </div>
+        <div class="start-photo">
+            <img src="static/images/insurance_family.jpg" height="500vh" width="600vh">
+        </div>
+    </header>
+    <div class="container">
+      <div class="text-center box"><i class="fa fa-heartbeat" aria-hidden="true"></i><br><br><a href="{{ url_for('health') }}">Health Insurance</a></div>
+      <div class="text-center box"><i class="fa fa-umbrella" aria-hidden="true"></i><br><br><a href="{{ url_for('life') }}">Life Insurance</a></div>
+      <div class="text-center box"><i class="fa fa-car" aria-hidden="true"></i><br><br><a href="{{ url_for('car') }}">Car Insurance</a></div>
+      <div class="text-center box"><i class="fa fa-motorcycle" aria-hidden="true"></i><br><br><a href="{{ url_for('bike') }}"> Bike Insurance</a></div>
+
+    </div>
+    <div class="general-section">
+        <div class="content">
+            <h1>GENERAL INSURANCE</h1>
+            <p>Surprises, both good and bad, are inevitable. Everyone loves the good ones and prays that they are spared the unpleasant ones. Yet, things happen.</br> When the going gets tough, you need general insurance that truly cares. </p><br><br>
+
+        </div>
+        <div class="image">
+            <img src="general_photo.jfif" alt="">
+        </div>
+    </div>
+    <h2>OUR GENERAL <span>INSURANCE PLANS</span></h2><br>
+    <div class="insure">
+    <h3>What would you like us to insure?</h3><br><br>
+        <div class="center">
+            <div id="services" class="container-fluid text-center">
+                <div class="row slideanim">
+                  <div class="col-sm-4">
+                      <span class="fa fa-heartbeat logo-small"></span>
+                      <h2>HEALTH INSURANCE</h2>
+                      <p>Health Insurance is a medical coverage that helps you meet your medical expenses by offering financial assistance.<br> Due to the high cost of hospitalization expenses, it is important to have a health insurance plan in place.</p>
+                    </div>
+                    <div class="col-sm-4">
+                      <span class="fa fa-umbrella logo-small"></span>
+                      <h2>LIFE INSURANCE</h2>
+                        <p>Life insurance is a contract that offers financial compensation in case of death or disability.<br> Some life insurance policies even offer financial compensation after retirement or a certain period of time.</p>
+                    </div>
+                    <div class="col-sm-4">
+                      <span class="fa fa-car logo-small"></span>
+                      <h2>CAR INSURANCE</h2>
+                      <p>It’s precious—your car.<br> You paid lakhs of rupees to buy that beauty.<br> Even a single scratch can be painful, forget about bigger damages.<br>
+
+Car insurance can reduce this pain for a few thousand rupees..</p>                    </div>
+                  </div>
+                  <br><br>
+                  <div class="row slideanim">
+                    <div class="col-sm-4">
+                      <span class="fa fa-motorcycle logo-small"></span>
+                      <h2>BIKE INSURANCE</h2>
+                      <p>This is your bike’s guardian angel.<br> It’s similar to Car insurance.<br>
+
+You cannot ride a bike or scooter in India without insurance.</p>
+                    </div>
+                    <div class="col-sm-4">
+                      <span class="fa fa-home logo-small"></span>
+                      <h2>HOME INSURANCE</h2>
+          <p>Home insurance is a cover that pays or compensates you for damage to your home due to natural calamities, man-made disasters or other threats.<br>
+
+It covers liabilities due to fire, burglary, theft, flood, earthquakes, and sabotage.
+                    </div>
+                    <div class="col-sm-4">
+                      <span class="fa fa-plane logo-small"></span>
+                      <h2>TRAVEL INSURANCE</h2>
+          <p>A travel insurance compensates you or pays for<br> any financial liabilities arising out of medical and non-medical<br> emergencies during your travel abroad or within the country.</p>
+                    </div>
+                  </div>
+                </div>
+        </div>
+    </div>
+
+
+
+    <section class="features-section">
+        <h1>We are different</h1>
+        <div class="feature-items-container">
+          <div class="feature-item">
+            <img src="./icon-snappy-process.jpeg" alt="" />
+            <h1>Snappy Process</h1>
+            <p
+              >Our application process can be completed in<br />minutes,not
+              hours.Don't get stuck filling <br />in tidious forms.</p
+            >
+          </div>
+          <div class="feature-item">
+            <img src="./icon-affordable-prices.svg" alt="" />
+            <h1>Affordable Prices</h1>
+            <p
+              >We don't want you worrying about high monthly <br />costs.Our
+              prices may be low.But we still offer<br />
+              the best coverage possible.</p
+            >
+          </div>
+          <div class="feature-item">
+            <img src="./icon-people-first.jpeg" alt="" />
+            <h1>People First</h1>
+            <p
+              >Our plans aren't full of conditions and clauses<br />
+              to prevent payouts. We make sure you're<br />
+              covered when you need it.</p
+            >
+          </div>
+        </div>
+      </section>
+      <section class="clt-section">
+        <h1
+          >Find out more<br />
+          about how we work.</h1
+        >
+        <button><a href="{{url_for('contactus')}}"> How we work</a></button>
+      </section>
+      <footer class="footer">
+        <section class="footer-section">
+          <div class="logo-container">
+            <h1>INSURANCE PLANNER</h1>
+            <div class="social-container">
+              <img src="./icon-facebook.jpeg" alt="" />
+              <img src="./icon-instagram.jpeg" alt="" />
+              <img src="./icon-twitter.jpeg" alt="" />
+              <img src="./icon-pinterest.jpeg" alt="" />
+            </div>
+          </div>
+          <div class="footer-menu-container">
+            <div class="menu">
+              <h1>Our Company</h1>
+              <div class="menu-items">
+                <a href="#">How we work</a>
+                <a href="#">Why Insurance Planner?</a>
+                <a href="#">View Plans</a>
+                <a href="#">Reviews</a>
+              </div>
+            </div>
+            <div class="menu">
+              <h1>Help me</h1>
+              <div class="menu-items">
+                <a href="#">Faq</a>
+                <a href="#">Terms of use?</a>
+                <a href="#">Privacy policy</a>
+                <a href="#">cookies</a>
+              </div>
+            </div>
+            <div class="menu">
+              <h1>Contact</h1>
+              <div class="menu-items">
+                <a href="#">Sales</a>
+                <a href="#">Support</a>
+                <a href="#">Live Chat</a>
+              </div>
+            </div>
+            <div class="menu">
+              <h1>Others</h1>
+              <div class="menu-items">
+                <a href="#">Carriers</a>
+                <a href="#">Press</a>
+                <a href="#">Licences</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </footer>
+
+    <script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
+

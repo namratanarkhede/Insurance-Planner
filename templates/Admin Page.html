@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=div.popup, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/admin.css">
+    
+    <title>Login Page</title>
+</head>
+<body>
+
+    <script>
+        var bgcolor=new Array("#7d2481","hsl(256, 26%, 20%)","rgb(230 221 231)","#E6E6FA","#9370DB","#9932CC")
+
+        document.body.style.background=bgcolor[Math.floor(Math.random()*bgcolor.length)]
+    </script>
+    <div class="popup">
+        <div class="close-btn">&times;</div>
+        <div class="form" >
+            <h2>Log in</h2>
+            <div class="form-element">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-element">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+            </div>
+            <h4><b>To make the user experience better..choose accordingly below</b></h4>
+            <div class="form-element">
+                <label for="userexp">For User Experience</label>
+                <select name="userexp">
+                    <option value="choose role" selected disabled> </option>
+                    <option value="userexp-new">New to Insurance</option>
+                    <option value="userexp-old">Familiar with Insurance</option>
+
+                </select><br><br>
+            </div>
+            <div class="form-element">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <div class="form-element">
+                <button><a href=" ">Sign In</a></button>
+            </div>
+            <div class="form-element">
+                <a href="">Forgot password ?</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

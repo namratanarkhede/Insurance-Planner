@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+           <meta name="veiwport" content='with=device-width', initial-scale=1.0">
+        <title>Insurance Planner</title>
+        <link rel="stylesheet" href="./static/Policy1.css">
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+                <a href="./Insurance Planner.html">
+                    <h1>"LIFE INSURANCE"</h1></a>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="">HOME</a></li>
+                        <li><a href="">ABOUT US</a></li>
+                        <li><a href="">ACCOUNT</a></li>
+                        <li><a href="">HELP</a></li>
+                        
+                     </ul>
+                </div>
+            </nav>
+        </section>
+        <div class="G">
+            <ul>
+                    <li class="list" data-filter="All">All&emsp;</li>
+                    <li class="list" data-filter="MOST">MOST PURCHASED&emsp;</li>
+                    <li class="list" data-filter="RECENTLY">RECENTLY ADDED&emsp;</li>
+                    <li class="list" data-filter="BUDGET">BUDGET FRIENDLY</li>
+
+            </ul>
+        </div><br>
+        
+        <section class="plans" id="plans">
+            <div class="heading">Best Plans for you</div>
+            <div class="mainbox">
+            <div class="container MOST">
+                <div class="tag">
+                    <p>Most Purchased</p>
+                </div>
+                <div class="image">
+                    <img src="icici_photo.jfif" height="115px"> 
+                    </div>
+                <div class="title">
+                    <h4>ICICI PRUDENTIAL<br>
+                        iPROTECT SMART PLAN</h4>
+                       <p>739/mon<br>
+                        4383 half yearly<br>
+                        8661 annually<br>
+                    </p>
+                </div>
+                <div class="desc">
+                    <button><a href="templates/Admin%20Page.html"> Read More</a></button>
+                </div>
+            
+                </div>
+
+                <div class="container RECENTLY">
+                    <div class="image">
+                        <img src="Max.jfif" height="150px"> 
+                        </div>
+                    <div class="title">
+                        <h4>MAX LIFE INSURANCE</h4>
+                            <p>1cr <br>
+                            12,265 Yearly<br>
+                            1,079 Monthly<br>
+
+                            
+                        </p>
+                    </div>
+                    <div class="desc">
+                        <button><a href="templates/Admin%20Page.html"> Read More</a></button>
+                    </div>
+                
+                    </div>
+
+                    <div class="container MOST">
+                        <div class="tag">
+                            <p>Most Purchased</p>
+                        </div>
+                        <div class="image">
+                            <img src="static/Bajaj.jfif" height="115px">
+                            </div>
+                        <div class="title">
+                            <h4>BAJAJ ALLIANZ<br>
+                                LIFE SMART PROTECT GOAL</h4>
+                                <p>1 cr<br>
+                                959 Monthly<br>
+                                9890 annually<br>
+                            </p>
+                        </div>
+                        <div class="desc">
+                            <button><a href="templates/Admin%20Page.html"> Read More</a></button>
+                        </div>
+                    
+                        </div>
+        
+                        <div class="container BUDGET">
+                            <div class="image">
+                                <img src="Edelweiss.jfif" height="100px"> 
+                                </div>
+                            <div class="title">
+                                <h4>TOTAL PROTECT PLUS<br>
+                                    INSURANCE PLAN</h4>
+                                   <p>2cr<br>
+                                    Monthly-1,902<br>
+                                    Quarterly-5,621<br>
+                                    Half Yearly-11,071<br>
+                                    Yearly-21,625<br>
+                                </p>
+                            </div>
+                            <div class="desc">
+                                <button><a href="templates/Admin%20Page.html">Read More</a></button>
+                            </div>
+                        
+                            </div>
+
+                    <div class="container RECENTLY">
+                                <div class="image">
+                                    <img src="icici_photo.jfif" height="130px"> 
+                                    </div>
+                                <div class="title">
+                                    <h4>iPRU iPROTECT SMART PLAN</h4>
+                                      <p>2 cr<br>
+                                       Monthly-2,305<br>
+                                       Half Yearly-13,661<br>
+                                       Annually-26,984<br>
+                                    </p>
+                                </div>
+                                <div class="desc">
+                                    <button><a href="templates/Admin%20Page.html">Read More</a></button>
+                                </div>
+                            
+                                </div>
+    
+                           
+                        <div class="container BUDGET">
+                                    <div class="image">
+                                        <img src="Tata aia.jfif" height="110px"> 
+                                        </div>
+                                    <div class="title">
+                                      <h4> SAMPOORNA RAKSHA SUPREME</h4> 
+                                            <p>2 cr<br>
+                                            Monthly-1,396<br>
+                                            Quarterly-4,111<br>
+                                            Half Yearly-8,064<br>
+                                            Yearly-15,812<br>
+
+                                        </p>
+                                    </div>
+                                    <div class="desc">
+                                        <button><a href="templates/Admin%20Page.html">Read More</a></button>
+                                    </div>
+                                
+                                </div>               
+                                             
+            </div> 
+                
+        </section>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+               $('.list').click(function(){
+                   const value = $(this).attr('data-filter');
+                   if (value=='All'){
+                       $('.container').show('1000');
+                   }
+                   else{
+                       $('.container').not('.'+value).hide('1000');
+                       $('.container').filter('.'+value).show('1000');
+
+                   }
+               })
+            })
+            
+        </script>
+    
+</html>
